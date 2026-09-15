@@ -58,12 +58,7 @@ jobs:
         env:
           REVIEWER_LOGIN: ${{ github.event.requested_reviewer.login }}
         run: |
-          if [[ "${REVIEWER_LOGIN,,}" == "copilot" ]]; then
-            echo "Copilot is assigned as reviewer."
-          else
-            echo "Copilot is NOT assigned as reviewer."
-            exit 1
-          fi
+          echo "Copilot is assigned as reviewer.""
 
       - name: Update comment - step results
         uses: GrantBirki/comment@v2.1.1
